@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="TYPO3.Neos.Seo" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="groups.robotstxt" xml:space="preserve" approved="yes">
+				<source>Robots.txt</source>
+			<target xml:lang="de">Robots.txt</target></trans-unit>
+      <trans-unit id="properties.robotsTxtContent" xml:space="preserve" approved="yes">
+				<source>Content (only relevant in site node)</source>
+			<target xml:lang="de">Inhalt (nur in der site-node relevant)</target></trans-unit>
+      <trans-unit id="properties.robotsTxtContent.codeEditor.buttonLabel" xml:space="preserve" approved="yes">
+				<source>Edit content</source>
+			<target xml:lang="de">Inhalt bearbeiten</target></trans-unit>
+    </body>
+  </file>
+</xliff>

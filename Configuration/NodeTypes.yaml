@@ -9,6 +9,7 @@
     'TYPO3.Neos.Seo:CanonicalLinkMixin': TRUE
     'TYPO3.Neos.Seo:OpenGraphMixin': TRUE
     'TYPO3.Neos.Seo:XmlSitemapMixin': TRUE
+    'TYPO3.Neos.Seo:RobotsTxtMixin': TRUE
   ui:
     inspector:
       tabs:
@@ -25,3 +26,4 @@
     'TYPO3.Neos.Seo:CanonicalLinkMixin': FALSE
     'TYPO3.Neos.Seo:OpenGraphMixin': FALSE
     'TYPO3.Neos.Seo:XmlSitemapMixin': FALSE
+    'TYPO3.Neos.Seo:RobotsTxtMixin': TRUE

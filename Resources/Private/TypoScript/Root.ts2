@@ -228,3 +228,20 @@ root.xmlSitemap {
 	type = 'TYPO3.Neos.Seo:XmlSitemap'
 }
 
+prototype(TYPO3.Neos.Seo:RobotsTxt) < prototype(TYPO3.TypoScript:Http.Message) {
+	doctype >
+	httpResponseHead.headers.Content-Type = 'text/plain'
+
+	body = TYPO3.Neos.NodeTypes:Text {
+		templatePath = 'resource://TYPO3.Neos.Seo/Private/Templates/Page/Robots.txt'
+		content = ${q(site).property('robotsTxtContent')}
+		@cache {
+			entryTags.1 = ${'Node_' + site.identifier}
+		}
+	}
+}
+
+root.robotsTxt {
+	condition = ${request.format == 'txt.robots'}
+	type = 'TYPO3.Neos.Seo:RobotsTxt'
+}

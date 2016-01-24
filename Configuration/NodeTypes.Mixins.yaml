@@ -289,3 +289,29 @@
         'TYPO3.Neos/Validation/NumberRangeValidator':
           minimum: 0
           maximum: 1
+
+#
+# Robots.txt fields mixin
+#
+'TYPO3.Neos.Seo:RobotsTxtMixin':
+  abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        robotstxt:
+          label: i18n
+          position: 500
+          tab: seo
+  properties:
+    robotsTxtContent:
+      type: string
+      defaultValue: 'User-agent: *'
+      ui:
+        label: i18n
+        inspector:
+          group: 'robotstxt'
+          position: 10
+          editor: 'TYPO3.Neos/Inspector/Editors/CodeEditor'
+          editorOptions:
+            buttonLabel: i18n
+            highlightingMode: 'text/plain'

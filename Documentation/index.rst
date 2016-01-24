@@ -77,10 +77,29 @@ keep track of this.
 For activating the rendering of the `sitemap.xml` you need to add the following route to the TYPO3.Neos.Seo package in your global `Configuration/Routes.yaml`.
 Keep in mind that there are no tabs in YAML, but only two spaces for indentation.
 
+Robots.txt
+-----------
+
+Editing the robots.txt often belongs to an SEO editor's tasks.
+In a multi-domain installation you can thus serve multiple robots, which is not easily possible otherwise.
+This features uses the CodeEditor because it fits best.
+As there are no display conditions, you see the property on any page.
+But only the one in the site node is being read and used.
+
+If you are using a standard .htaccess, vhost or nginx config, you have to remove the robots.txt exception like
+
+::
+
+	# Stop rewrite processing no matter if a package resource, robots.txt etc. exists or not
+	RewriteRule ^(_Resources/Packages/|robots\.txt|favicon\.ico) - [L]
+
+	# Change to:
+	RewriteRule ^(_Resources/Packages/|favicon\.ico) - [L]
+
 ::
 
 	##
-	# Neos Seo: XML Sitemap
+	# Neos Seo: XML Sitemap and robots.txt
 
 	-
 	  name: 'Neos Seo'
@@ -90,14 +109,15 @@ Keep in mind that there are no tabs in YAML, but only two spaces for indentation
 		  package: 'TYPO3.Neos.Seo'
 		  variables:
 			'xmlSitemapPath': 'sitemap.xml'
+			'robotsTxtPath': 'robotsTxt'
 
 	##
 	# Neos subroutes
 
 	...
 
-There is no need for creating a document node for the sitemap as this route will work for all site nodes.
 
+There is no need for creating a document node for the sitemap or robots.txt as this route will work for all site nodes.
 
 Alternate Language Tag
 ------------------------
